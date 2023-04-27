@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="loan_calculator">
+        <div><h1>loan caculator</h1>
+        <div>
+            <form action="#">
+                <div class="title">loan amoun</div>
+                <input type="text" value="200000" class="loan_amount">
+                <div class="title">intres</div>
+                <input type="text" value="7.5" class="loan_intrest">
+                <div class="title">time</div>
+                <input type="redio" name="btn" id="year"><label for="year">year</label>
+                <input type="redio" name="btn" id="month"><label for="month">month</label>
+            </form>
+        </div>
+        
+        </div>
+
+    </div>
+
+
+
+    <script>
+    let amount = document.getElementsByClassName("loan_amount").value;
+    let intrest = 10;
+    let time = 2;
+
+    function total_intrest_function(amount, intrest, time) {
+        return ((amount * intrest) / 100) * time;
+    }
+    let total_intrest = total_intrest_function(amount, intrest, time)
+
+    function total_amount_function(amount, total_intrest) {
+        return amount + total_intrest
+    }
+    let total_amount = total_amount_function(amount, total_intrest)
+
+    function EMI_function(total_amount, time) {
+        return total_amount / (time * 12)
+    }
+    let Emi_do_pay = EMI_function(total_amount, time)
+
+    console.log(total_intrest)
+    console.log(total_amount)
+    console.log(Emi_do_pay)
+</script>
+
+
+</body>
+</html>
